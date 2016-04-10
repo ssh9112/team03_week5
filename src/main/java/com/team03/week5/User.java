@@ -1,5 +1,5 @@
 package com.team03.week5;
-
+//test
 public class User {
 	private String planTypeName;
 	private int numberOfLines;
