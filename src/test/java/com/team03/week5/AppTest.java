@@ -1,5 +1,7 @@
 package com.team03.week5;
 import static org.junit.Assert.*;
+
+
 import org.junit.*;
 
 public class AppTest 
@@ -165,5 +167,10 @@ public class AppTest
        planType = new Silver();
        totalRate.calTotalRate(user, planType);
        assertEquals(299.95, totalRate.getTotalRate(),0.01);
+   }
+   @Test
+   public void testApp(){
+	   app.main(new String[]{"TEST"});
+	   assertEquals(true, true);
    }
 }

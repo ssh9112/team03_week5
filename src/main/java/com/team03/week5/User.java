@@ -1,9 +1,9 @@
 package com.team03.week5;
 
 public class User {
-	private String planTypeName;
-	private int numberOfLines;
-	private int minutesUsed;
+	private String planTypeName=null;
+	private int numberOfLines=0;
+	private int minutesUsed=0;
 	public String getPlanTypeName() {
 		return planTypeName;
 	}
