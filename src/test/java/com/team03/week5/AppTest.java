@@ -166,4 +166,9 @@ public class AppTest
        totalRate.calTotalRate(user, planType);
        assertEquals(299.95, totalRate.getTotalRate(),0.01);
    }
+   @Test
+   public void testApp(){
+	   app.main(null);
+	   assertEquals(true, true);
+   }
 }
