@@ -14,6 +14,12 @@ public class AppTest
         user = new User();
         totalRate = new TotalRate();
     }
+   
+   @Test
+   	public void testCreateApp(){
+	   App app = new App();
+   }
+   
    @Test
    public void testAppInputSmallGold()
    {
