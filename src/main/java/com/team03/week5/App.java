@@ -16,19 +16,23 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-
-		while (!insertUserPlanType(user)) {
-			LOGGER.info(PRINTERRORMESSAGE);
+		if(args.length!=0){
+			user.setPlanTypeName("Gold");
+			user.setMinutesUsed(10000);
+			user.setNumberOfLines(6);;
 		}
+			while (!insertUserPlanType(user)) {
+				LOGGER.info(PRINTERRORMESSAGE);
+			}
 
-		while (!insertUserNumberOfLines(user)) {
-			LOGGER.info(PRINTERRORMESSAGE);
-		}
+			while (!insertUserNumberOfLines(user)) {
+				LOGGER.info(PRINTERRORMESSAGE);
+			}
+			
+			while(!insertMinutesUsed(user)) {
+				LOGGER.info(PRINTERRORMESSAGE);
+			}
 		
-		while(!insertMinutesUsed(user)) {
-			LOGGER.info(PRINTERRORMESSAGE);
-		}
-	
 		LOGGER.info("User의 요금제 : " + user.getPlanTypeName());
 
 		LOGGER.info("User의 회선 수 : " + user.getNumberOfLines());
@@ -40,8 +44,9 @@ public class App {
 
 	public static boolean insertUserPlanType(User user) {
 		LOGGER.info("User의 요금제(Gold/Silver)를 입력하세요.");
+		if(user.getPlanTypeName()==null){
 		user.setPlanTypeName(scan.next());
-
+		}
 		if ("Gold".equals(user.getPlanTypeName()) || "gold".equals(user.getPlanTypeName())) {
 			planType = new Gold();
 			return true;
@@ -55,7 +60,9 @@ public class App {
 
 	public static boolean insertUserNumberOfLines(User user) {
 		LOGGER.info("User의 회선 수를 입력하세요.");
+		if(user.getNumberOfLines()==0){
 		user.setNumberOfLines(scan.nextInt());
+		}
 		if (user.getNumberOfLines() <= 0) {
 			return false;
 		} else {
@@ -65,7 +72,9 @@ public class App {
 	
 	public static boolean insertMinutesUsed(User user) {
 		LOGGER.info("User의 사용시간을 입력하세요.");
+		if(user.getMinutesUsed()==0){
 		user.setMinutesUsed(scan.nextInt());
+		}
 		if (user.getMinutesUsed() <= 0) {
 			return false;
 		} else {
