@@ -12,7 +12,7 @@ public class App {
 	private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 	private static final String PRINTERRORMESSAGE = "잘못된 입력값입니다.";
 
-	private App() {
+	public App() {
 	}
 
 	public static void main(String[] args) {
