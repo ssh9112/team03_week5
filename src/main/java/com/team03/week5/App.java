@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class App {
+	//test
 	static Scanner scan = new Scanner(System.in);
 	static User user = new User();
 	static PlanType planType = null;
