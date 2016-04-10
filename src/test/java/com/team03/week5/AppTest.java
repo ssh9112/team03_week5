@@ -178,4 +178,9 @@ public class AppTest
 	   App.main(new String[]{"Silver","Silver"});
 	   assertEquals(true, true);
    }
+   @Test
+   public void testFailApp(){
+	   App.main(new String[]{"Fail","Fail","Fail"});
+	   assertEquals(true, true);
+   }
 }
