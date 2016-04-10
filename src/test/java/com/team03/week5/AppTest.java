@@ -20,63 +20,63 @@ public class AppTest
    @Test
    public void testAppInputSmallGold()
    {
-      setUp();
+      //setUp();
       user.setPlanTypeName("gold");
       assertEquals("gold", user.getPlanTypeName());
    }
    @Test
    public void testAppInputBigGold()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Gold");
        assertEquals("Gold", user.getPlanTypeName());
    }
    @Test
    public void testAppInputSmallSilver()
    {
-      setUp();
+      //setUp();
       user.setPlanTypeName("silver");
       assertEquals("silver", user.getPlanTypeName());
    }
    @Test
    public void testAppInputBigSilver()
    {
-      setUp();
+      //setUp();
       user.setPlanTypeName("Silver");
       assertEquals("Silver", user.getPlanTypeName());
    }
    @Test
    public void testAppInputIncorrectlyPlanName()
    {
-      setUp();
+      //setUp();
       user.setPlanTypeName("gollld");
        //assertTrue();
    }
    @Test
    public void testAppInputLine()
    {
-      setUp();
+      //setUp();
        user.setNumberOfLines(1);
        assertEquals(1, user.getNumberOfLines());
    }
    @Test
    public void testAppInputZeroLine()
    {
-      setUp();
+      //setUp();
        user.setNumberOfLines(0);
        //assertTrue(true);
    }
    @Test
    public void testAppInputUsedTime()
    {
-      setUp();
+      //setUp();
        user.setMinutesUsed(500);
        assertEquals(500, user.getMinutesUsed());
    }
    @Test
    public void testAppInputZeroUsedTime()
    {
-      setUp();
+      //setUp();
        user.setMinutesUsed(0);
        //assertTrue(true);
    }
@@ -84,7 +84,7 @@ public class AppTest
    @Test
    public void testUserGoldBill()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Gold");
        user.setNumberOfLines(1);
        user.setMinutesUsed(500);
@@ -106,7 +106,7 @@ public class AppTest
    @Test
    public void testUserGoldAddLines()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Gold");
        user.setNumberOfLines(4);
        user.setMinutesUsed(500);
@@ -117,7 +117,7 @@ public class AppTest
    @Test
    public void testUserGoldOverTime()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Gold");
        user.setNumberOfLines(1);
        user.setMinutesUsed(1300);
@@ -128,7 +128,7 @@ public class AppTest
    @Test
    public void testUserSilverBill()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Silver");
        user.setNumberOfLines(1);
        user.setMinutesUsed(250);
@@ -139,7 +139,7 @@ public class AppTest
    @Test
    public void testUserSilverAddLine()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Silver");
        user.setNumberOfLines(2);
        user.setMinutesUsed(250);
@@ -150,7 +150,7 @@ public class AppTest
    @Test
    public void testUserSilverAddLines()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Silver");
        user.setNumberOfLines(4);
        user.setMinutesUsed(250);
@@ -161,7 +161,7 @@ public class AppTest
    @Test
    public void testUserSilverOverTime()
    {
-      setUp();
+      //setUp();
        user.setPlanTypeName("Silver");
        user.setNumberOfLines(1);
        user.setMinutesUsed(1000);
