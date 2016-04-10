@@ -16,10 +16,15 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-		if(args.length!=0){
+		if(args.length==1){
 			user.setPlanTypeName("Gold");
 			user.setMinutesUsed(10000);
-			user.setNumberOfLines(6);;
+			user.setNumberOfLines(6);
+		}
+		if(args.length==2){
+			user.setPlanTypeName("Silver");
+			user.setMinutesUsed(10000);
+			user.setNumberOfLines(6);
 		}
 			while (!insertUserPlanType(user)) {
 				LOGGER.info(PRINTERRORMESSAGE);
