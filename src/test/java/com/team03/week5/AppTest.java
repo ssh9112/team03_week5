@@ -7,18 +7,15 @@ public class AppTest
    User user;
    PlanType planType;
    TotalRate totalRate;
+   App app;
    
    @Before
     public void setUp()
     {
+	   	app = new App();
         user = new User();
         totalRate = new TotalRate();
     }
-   
-   @Test
-   	public void testCreateApp(){
-	   App app = new App();
-   }
    
    @Test
    public void testAppInputSmallGold()
