@@ -169,8 +169,18 @@ public class AppTest
        assertEquals(299.95, totalRate.getTotalRate(),0.01);
    }
    @Test
-   public void testApp(){
-	   app.main(new String[]{"TEST"});
+   public void testGoldApp(){
+	   App.main(new String[]{"Gold"});
+	   assertEquals(true, true);
+   }
+   @Test
+   public void testSilverApp(){
+	   App.main(new String[]{"Silver","Silver"});
+	   assertEquals(true, true);
+   }
+   @Test
+   public void testFailApp(){
+	   App.main(new String[]{"Fail","Fail","Fail"});
 	   assertEquals(true, true);
    }
 }

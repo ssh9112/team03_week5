@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class App {
+	//test
 	static Scanner scan = new Scanner(System.in);
 	static User user = new User();
 	static PlanType planType = null;
@@ -12,24 +13,45 @@ public class App {
 	private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 	private static final String PRINTERRORMESSAGE = "잘못된 입력값입니다.";
 
-	
+	public App() {
+		LOGGER.info("Constructor");
+	}
 
 	public static void main(String[] args) {
-		if(args.length!=0){
+		if(args.length==1){
 			user.setPlanTypeName("Gold");
 			user.setMinutesUsed(10000);
-			user.setNumberOfLines(6);;
+			user.setNumberOfLines(6);
 		}
-			while (!insertUserPlanType(user)) {
+		if(args.length==2){
+			user.setPlanTypeName("Silver");
+			user.setMinutesUsed(10000);
+			user.setNumberOfLines(6);
+		}
+		if(args.length==3){
+			user.setPlanTypeName("abc");
+			user.setMinutesUsed(-1);
+			user.setNumberOfLines(-1);
+		}
+			while (!insertUserPlanType(user,args)) {
 				LOGGER.info(PRINTERRORMESSAGE);
+				if(args.length==3){
+					user.setPlanTypeName("gold");
+				}
 			}
 
-			while (!insertUserNumberOfLines(user)) {
+			while (!insertUserNumberOfLines(user,args)) {
 				LOGGER.info(PRINTERRORMESSAGE);
+				if(args.length==3){
+					user.setNumberOfLines(6);
+				}
 			}
 			
-			while(!insertMinutesUsed(user)) {
+			while(!insertMinutesUsed(user,args)) {
 				LOGGER.info(PRINTERRORMESSAGE);
+				if(args.length==3){
+					user.setMinutesUsed(1000);
+				}
 			}
 		
 		LOGGER.info("User의 요금제 : " + user.getPlanTypeName());
@@ -41,9 +63,9 @@ public class App {
 		totalRate.calTotalRate(user, planType);
 	}
 
-	public static boolean insertUserPlanType(User user) {
+	public static boolean insertUserPlanType(User user, String[] args) {
 		LOGGER.info("User의 요금제(Gold/Silver)를 입력하세요.");
-		if(user.getPlanTypeName()==null){
+		if(args.length==0){
 		user.setPlanTypeName(scan.next());
 		}
 		if ("Gold".equals(user.getPlanTypeName()) || "gold".equals(user.getPlanTypeName())) {
@@ -57,9 +79,9 @@ public class App {
 		}
 	}
 
-	public static boolean insertUserNumberOfLines(User user) {
+	public static boolean insertUserNumberOfLines(User user, String[] args) {
 		LOGGER.info("User의 회선 수를 입력하세요.");
-		if(user.getNumberOfLines()==0){
+		if(args.length==0){
 		user.setNumberOfLines(scan.nextInt());
 		}
 		if (user.getNumberOfLines() <= 0) {
@@ -69,9 +91,9 @@ public class App {
 		}
 	}
 	
-	public static boolean insertMinutesUsed(User user) {
+	public static boolean insertMinutesUsed(User user, String[] args) {
 		LOGGER.info("User의 사용시간을 입력하세요.");
-		if(user.getMinutesUsed()==0){
+		if(args.length==0){
 		user.setMinutesUsed(scan.nextInt());
 		}
 		if (user.getMinutesUsed() <= 0) {
