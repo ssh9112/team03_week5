@@ -13,6 +13,7 @@ public class App {
 	private static final String PRINTERRORMESSAGE = "잘못된 입력값입니다.";
 
 	public App() {
+		//nothing to do;
 	}
 
 	public static void main(String[] args) {
