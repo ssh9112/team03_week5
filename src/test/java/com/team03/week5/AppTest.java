@@ -8,7 +8,7 @@ public class AppTest
    PlanType planType;
    TotalRate totalRate;
    
-   @Test
+   @Before
     public void setUp()
     {
         user = new User();
