@@ -13,7 +13,7 @@ public class TotalRate {
 	String resultofUsed="";
 	// 기본요금+회선에 대한 추가요금(요금제에 따라서 기본요금과 추가되는 요금이 다르다)
 	public double calNumberOfLine(User user, PlanType planType) {
-
+		resultofLines = "";
 		int numberOfLines = user.getNumberOfLines();
 		lineCost = planType.getBasicMonthlyRate();
 		if (numberOfLines > 1 && numberOfLines <= 3) {
@@ -32,7 +32,7 @@ public class TotalRate {
 
 	// 초과 금액에 대한 추가요금 계산
 	public double calMinuteUsed(User user, PlanType planType) {
-		
+		resultofUsed = "";
 		int minutesUsed = user.getMinutesUsed();
 		double ratePerExcessMinute = planType.getRatePerExcessMinute();
 		int includedMinutes = planType.getIncludedMinutes();

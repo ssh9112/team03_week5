@@ -19,6 +19,7 @@ public class App {
 	}
 
 	public static void main(String[] args) {
+		flag = true;
 		try {
 			if (!insertUserPlanType(user, args[0])) {
 				LOGGER.info(PRINTERRORMESSAGE);
@@ -40,18 +41,22 @@ public class App {
 			LOGGER.info(".......................");
 		}
 
-		LOGGER.info("User의 요금제 : " + user.getPlanTypeName());
 
-		LOGGER.info("User의 회선 수 : " + user.getNumberOfLines());
-
-		LOGGER.info("User의 사용시간 : " + user.getMinutesUsed());
-
-		totalRate.calTotalRate(user, planType);
+		if (flag) {
+			LOGGER.info("User의 요금제 : " + user.getPlanTypeName());
+			LOGGER.info("User의 회선 수 : " + user.getNumberOfLines());
+			LOGGER.info("User의 사용시간 : " + user.getMinutesUsed());
+			
+			totalRate.calTotalRate(user, planType);
+		}else {
+			return;
+		}
 		
 	}
 
 	public static boolean insertUserPlanType(User user, String args) {
 		LOGGER.info("User의 요금제(Gold/Silver)를 입력하세요.");
+		user.setPlanTypeName(args);
 		if ("Gold".equals(user.getPlanTypeName()) || "gold".equals(user.getPlanTypeName())) {
 			planType = new Gold();
 			return true;
@@ -65,6 +70,7 @@ public class App {
 
 	public static boolean insertUserNumberOfLines(User user, String args) {
 		LOGGER.info("User의 회선 수를 입력하세요.");
+		user.setNumberOfLines(Integer.parseInt(args));
 		if (user.getNumberOfLines() <= 0) {
 			return false;
 		} else {
@@ -74,6 +80,7 @@ public class App {
 
 	public static boolean insertMinutesUsed(User user, String args) {
 		LOGGER.info("User의 사용시간을 입력하세요.");
+        user.setMinutesUsed(Integer.parseInt(args));
 		if (user.getMinutesUsed() <= 0) {
 			return false;
 		} else {
