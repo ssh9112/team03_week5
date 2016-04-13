@@ -16,6 +16,7 @@ public class AppTest
     {
 	   	app = new App();
         user = new User();
+        planType = new PlanType();
         totalRate = new TotalRate();
     }
    
@@ -149,7 +150,6 @@ public class AppTest
    @Test
    public void testUserSilverAddLines()
    {
-       
        user.setPlanTypeName("Silver");
        user.setNumberOfLines(4);
        user.setMinutesUsed(250);
@@ -169,18 +169,21 @@ public class AppTest
        assertEquals(299.95, totalRate.getTotalRate(),0.01);
    }
    @Test
-   public void testGoldApp(){
-	   App.main(new String[]{"Gold", "5", "1020"});
-	   assertEquals(App.flag, true);
+   public void testSilverApp(){
+	   setUp();
+	   App.main(new String[]{"Silver", "5","1020"});
+	   assertEquals(true, App.flag);
    }
    @Test
-   public void testSilverApp(){
-	   App.main(new String[]{"Silver", "5","1020"});
-	   assertEquals(App.flag, true);
+   public void testGoldApp(){
+	   setUp();
+	   App.main(new String[]{"Gold", "5", "1020"});
+	   assertEquals(true,App.flag);
    }
    @Test
    public void testFailApp(){
+	   setUp();
 	   App.main(new String[]{"other","-1","-1"});
-	   assertEquals(App.flag, true);
+	   assertEquals(false, App.flag);
    }
 }
