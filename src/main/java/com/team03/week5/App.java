@@ -37,6 +37,7 @@ public class App {
 		} catch (Exception e) {
 			flag = false;
 			LOGGER.info("ERROR : Wrong input arguments");
+			e.printStackTrace();
 		}
 
 
