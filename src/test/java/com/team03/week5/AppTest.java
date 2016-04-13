@@ -170,6 +170,7 @@ public class AppTest
    }
    @Test
    public void testSilverApp(){
+	   
 	   App.main(new String[]{SILVER, "1","1020"});
 	   assertEquals(true, App.flag);
    }

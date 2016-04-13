@@ -13,6 +13,9 @@ public class App {
 	private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 	private static final String PRINTERRORMESSAGE = "잘못된 입력값입니다.";
 
+	App() {
+		LOGGER.info("Constructor");
+	}
 
 	public static void main(String[] args) {
 		flag = true;
