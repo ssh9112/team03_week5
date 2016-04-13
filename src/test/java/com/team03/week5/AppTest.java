@@ -10,6 +10,8 @@ public class AppTest
    PlanType planType;
    TotalRate totalRate;
    App app;
+	private static final String GOLD = "GOLD";
+	private static final String SILVER = "SILVER";
    
    @Before
     public void setUp()
@@ -24,29 +26,29 @@ public class AppTest
    public void testAppInputSmallGold()
    {
        
-      user.setPlanTypeName("gold");
-      assertEquals("gold", user.getPlanTypeName());
+      user.setPlanTypeName(GOLD);
+      assertEquals(GOLD, user.getPlanTypeName());
    }
    @Test
    public void testAppInputBigGold()
    {
        
-       user.setPlanTypeName("Gold");
-       assertEquals("Gold", user.getPlanTypeName());
+       user.setPlanTypeName(GOLD);
+       assertEquals(GOLD, user.getPlanTypeName());
    }
    @Test
    public void testAppInputSmallSilver()
    {
        
-      user.setPlanTypeName("silver");
-      assertEquals("silver", user.getPlanTypeName());
+      user.setPlanTypeName(SILVER);
+      assertEquals(SILVER, user.getPlanTypeName());
    }
    @Test
    public void testAppInputBigSilver()
    {
        
-      user.setPlanTypeName("Silver");
-      assertEquals("Silver", user.getPlanTypeName());
+      user.setPlanTypeName(SILVER);
+      assertEquals(SILVER, user.getPlanTypeName());
    }
    @Test
    public void testAppInputIncorrectlyPlanName()
@@ -85,7 +87,7 @@ public class AppTest
    public void testUserGoldBill()
    {
        
-       user.setPlanTypeName("Gold");
+       user.setPlanTypeName(GOLD);
        user.setNumberOfLines(1);
        user.setMinutesUsed(500);
        planType = new Gold();
@@ -96,7 +98,7 @@ public class AppTest
    public void testUserGoldAddLine()
    {
       setUp();
-       user.setPlanTypeName("Gold");
+       user.setPlanTypeName(GOLD);
        user.setNumberOfLines(2);
        user.setMinutesUsed(500);
        planType = new Gold();
@@ -107,7 +109,7 @@ public class AppTest
    public void testUserGoldAddLines()
    {
        
-       user.setPlanTypeName("Gold");
+       user.setPlanTypeName(GOLD);
        user.setNumberOfLines(4);
        user.setMinutesUsed(500);
        planType = new Gold();
@@ -118,7 +120,7 @@ public class AppTest
    public void testUserGoldOverTime()
    {
        
-       user.setPlanTypeName("Gold");
+       user.setPlanTypeName(GOLD);
        user.setNumberOfLines(1);
        user.setMinutesUsed(1300);
        planType = new Gold();
@@ -129,7 +131,7 @@ public class AppTest
    public void testUserSilverBill()
    {
        
-       user.setPlanTypeName("Silver");
+       user.setPlanTypeName(SILVER);
        user.setNumberOfLines(1);
        user.setMinutesUsed(250);
        planType = new Silver();
@@ -140,7 +142,7 @@ public class AppTest
    public void testUserSilverAddLine()
    {
        
-       user.setPlanTypeName("Silver");
+       user.setPlanTypeName(SILVER);
        user.setNumberOfLines(2);
        user.setMinutesUsed(250);
        planType = new Silver();
@@ -150,7 +152,7 @@ public class AppTest
    @Test
    public void testUserSilverAddLines()
    {
-       user.setPlanTypeName("Silver");
+       user.setPlanTypeName(SILVER);
        user.setNumberOfLines(4);
        user.setMinutesUsed(250);
        planType = new Silver();
@@ -161,7 +163,7 @@ public class AppTest
    public void testUserSilverOverTime()
    {
        
-       user.setPlanTypeName("Silver");
+       user.setPlanTypeName(SILVER);
        user.setNumberOfLines(1);
        user.setMinutesUsed(1000);
        planType = new Silver();
@@ -170,12 +172,12 @@ public class AppTest
    }
    @Test
    public void testSilverApp(){
-	   App.main(new String[]{"Silver", "1","1020"});
+	   App.main(new String[]{SILVER, "1","1020"});
 	   assertEquals(true, App.flag);
    }
    @Test
    public void testGoldApp(){
-	   App.main(new String[]{"Gold", "5", "1020"});
+	   App.main(new String[]{GOLD, "5", "1020"});
 	   assertEquals(true,App.flag);
    }
    @Test
