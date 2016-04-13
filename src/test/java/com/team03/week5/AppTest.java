@@ -170,12 +170,12 @@ public class AppTest
    }
    @Test
    public void testSilverApp(){
-	   App.main(new String[]{"silver", "1","1020"});
+	   App.main(new String[]{"Silver", "5","1020"});
 	   assertEquals(true, App.flag);
    }
    @Test
    public void testGoldApp(){
-	   App.main(new String[]{"gold", "5", "1020"});
+	   App.main(new String[]{"Gold", "5", "1020"});
 	   assertEquals(true,App.flag);
    }
    @Test
