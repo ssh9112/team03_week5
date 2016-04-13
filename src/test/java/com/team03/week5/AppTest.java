@@ -170,20 +170,23 @@ public class AppTest
    }
    @Test
    public void testSilverApp(){
-	   setUp();
 	   App.main(new String[]{"Silver", "5","1020"});
 	   assertEquals(true, App.flag);
    }
    @Test
    public void testGoldApp(){
-	   setUp();
 	   App.main(new String[]{"Gold", "5", "1020"});
 	   assertEquals(true,App.flag);
    }
    @Test
    public void testFailApp(){
-	   setUp();
 	   App.main(new String[]{"other","-1","-1"});
+	   assertEquals(false, App.flag);
+   }
+   
+   @Test 
+   public void testNoArgs() {
+	   App.main(null);
 	   assertEquals(false, App.flag);
    }
 }
