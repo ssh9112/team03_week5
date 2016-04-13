@@ -56,10 +56,10 @@ public class App {
 	public static boolean insertUserPlanType(User user, String args) {
 		LOGGER.info("User의 요금제(Gold/Silver)를 입력하세요.");
 		user.setPlanTypeName(args);
-		if ("Gold".equals(user.getPlanTypeName()) || "gold".equals(user.getPlanTypeName())) {
+		if ("GOLD".equals(user.getPlanTypeName().toUpperCase())) {
 			planType = new Gold();
 			return true;
-		} else if ("Silver".equals(user.getPlanTypeName()) || "silver".equals(user.getPlanTypeName())) {
+		} else if ("SILVER".equals(user.getPlanTypeName().toUpperCase()) ) {
 			planType = new Silver();
 			return true;
 		} else {
