@@ -9,7 +9,6 @@ public class AppTest
    User user;
    PlanType planType;
    TotalRate totalRate;
-   App app;
 	private static final String GOLD = "GOLD";
 	private static final String SILVER = "SILVER";
    
