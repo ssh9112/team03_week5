@@ -9,14 +9,13 @@ public class AppTest
    User user;
    PlanType planType;
    TotalRate totalRate;
-   App app;
+   App app = new App();
 	private static final String GOLD = "GOLD";
 	private static final String SILVER = "SILVER";
    
    @Before
     public void setUp()
     {
-	   	app = new App();
         user = new User();
         planType = new PlanType();
         totalRate = new TotalRate();
