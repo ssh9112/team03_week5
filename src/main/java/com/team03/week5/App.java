@@ -1,11 +1,9 @@
 package com.team03.week5;
 
-import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class App {
 	// test
-	static Scanner scan = new Scanner(System.in);
 	static User user = new User();
 	static PlanType planType = null;
 	static TotalRate totalRate = new TotalRate();
@@ -38,7 +36,7 @@ public class App {
 			
 		} catch (Exception e) {
 			flag = false;
-			LOGGER.info(".......................");
+			LOGGER.info("ERROR : Wrong input arguments");
 		}
 
 
