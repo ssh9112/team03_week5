@@ -1,5 +1,6 @@
 package com.team03.week5;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class App {
@@ -36,8 +37,7 @@ public class App {
 			
 		} catch (Exception e) {
 			flag = false;
-			LOGGER.info("ERROR : Wrong input arguments");
-			e.printStackTrace();
+			LOGGER.log(Level.INFO,"ERROR : Wrong input arguments",e);
 		}
 
 
