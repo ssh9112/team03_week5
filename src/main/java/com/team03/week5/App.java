@@ -72,20 +72,12 @@ public class App {
 	public static boolean insertUserNumberOfLines(User user, String args) {
 		LOGGER.info("User의 회선 수를 입력하세요.");
 		user.setNumberOfLines(Integer.parseInt(args));
-		if (user.getNumberOfLines() <= 0) {
-			return false;
-		} else {
-			return true;
-		}
+		return !(user.getNumberOfLines() <= 0);
 	}
 
 	public static boolean insertMinutesUsed(User user, String args) {
 		LOGGER.info("User의 사용시간을 입력하세요.");
         user.setMinutesUsed(Integer.parseInt(args));
-		if (user.getMinutesUsed() <= 0) {
-			return false;
-		} else {
-			return true;
-		}
+        return !(user.getMinutesUsed() <= 0);
 	}
 }
