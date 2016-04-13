@@ -23,7 +23,7 @@ public class TotalRate {
 			lineCost += (((numberOfLines - 3) * planType.getFamilyDistcount())+planType.getAdditionalLineRate()*2);
 			resultofLines+=(planType.getBasicMonthlyRate()+PREROUNDBRACKET+2+" * "+planType.getAdditionalLineRate()+POSTROUNDBRACKET+
 					PREROUNDBRACKET+(numberOfLines-3)+" * "+planType.getFamilyDistcount()+POSTROUNDBRACKET);
-		} else if(numberOfLines == 1) {
+		} else{
 			resultofLines+=Double.toString(planType.getBasicMonthlyRate());
 		}
 		
