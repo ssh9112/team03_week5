@@ -4,9 +4,9 @@
     
 ##jenkins - 프로젝트 설정
 ###Version
-  JDK : 1.8
-  SonarQube : 5.4
-  Jenkins : 1.654
+  	JDK : 1.8
+  	SonarQube : 5.4
+  	Jenkins : 1.654
 ###Build
 	Root POM : pom.xml
 	Goals and options : clean org.jacoco:jacoco-maven-plugin:prepare-agent install
@@ -14,9 +14,9 @@
 	Invoke Standalone SonarQube Analysis
 		JDK : 1.8+
 		Analysis properties : sonar.projectKey=Team03_week5
-			  	                sonar.projectName=Team03_week5
-				                  sonar.projectVersion=0.0.1
-				                  sonar.sources=src
+	  	                      sonar.projectName=Team03_week5
+		                      sonar.projectVersion=0.0.1
+	                  	      sonar.sources=src
 		JVM Options : -Xmx500m -XX:MaxPermSize=100m
 
 ###구성
