@@ -38,7 +38,7 @@
   ![Result1](./img/2.png)
 
 ###4. Excute
-	command prompt : java -jar week4-0.0.1-SNAPSHOT.jar [Plantype] [Numberofline] [Minutesused]
+	command prompt : java -jar week5-0.0.1-SNAPSHOT.jar [Plantype] [Numberofline] [Minutesused]
       - Plantype : gold | silver (Ignorecase)
       - Numberofline : Positive Integer
       - Minutesused : Positive Integer
